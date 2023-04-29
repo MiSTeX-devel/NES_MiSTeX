@@ -1,0 +1,32 @@
+mainfile: NES.sv
+use-template-sys: True
+
+sourcedirs:
+  - sys
+  - rtl
+  - rtl/t65
+  - rtl/SOUND
+  - rtl/SOUND/OPLL
+  - rtl/SOUND/OPLL/VM2413
+  - rtl/mappers
+
+quartus:
+  sourcefiles:
+    - NES.sdc
+    - sys/sys_top.sdc
+    - sys/pll_hdmi_adj.vhd
+    - sys/altera_pll_reconfig_top.v
+    - sys/altera_pll_reconfig_core.v
+    - sys/pll_cfg.v
+    - rtl/pll_0002.v
+    - sys/pll_audio_0002.v
+    - sys/pll_hdmi_0002.v
+    - sys/hdmi_config.sv
+
+vivado:
+  sourcefiles:
+    - rtl/pll_0002-xilinx7.v
+    - sys/pll_hdmi_adj.vhd
+    - sys/pll_cfg.v
+    - sys/pll_hdmi_0002-xilinx7.v
+    - sys/pll_audio_0002-xilinx7.v
